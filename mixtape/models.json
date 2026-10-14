@@ -1,0 +1,82 @@
+{
+  "_about": [
+    "AI music models the tool can use through fal.ai. 'verified' false = written from documentation,",
+    "run one cheap test before a big batch and fix the fields if fal.ai complains.",
+    "Prices are US dollars per minute of music, approximate; the ledger records what was really spent.",
+    "'max_seconds' is the longest single piece the model makes; longer tracks are made in pieces and joined."
+  ],
+  "default": "ace-step",
+  "models": {
+    "ace-step": {
+      "endpoint": "fal-ai/ace-step",
+      "page": "https://fal.ai/models/fal-ai/ace-step",
+      "input": {
+        "prompt": "{prompt}",
+        "lyrics": "[inst]",
+        "duration": "{seconds}",
+        "number_of_steps": 60,
+        "guidance_scale": 15,
+        "scheduler": "euler"
+      },
+      "output": "audio.url",
+      "price_per_minute": 0.06,
+      "max_seconds": 240,
+      "verified": false,
+      "notes": "Open-source model, cheap, makes up to 4 minutes in one go. Good for beats, lo-fi, EDM, pop instrumentals. '[inst]' in lyrics means instrumental."
+    },
+    "stable-audio": {
+      "endpoint": "fal-ai/stable-audio",
+      "page": "https://fal.ai/models/fal-ai/stable-audio",
+      "input": {
+        "prompt": "{prompt}",
+        "seconds_total": "{seconds}",
+        "steps": 100
+      },
+      "output": "audio_file.url",
+      "price_per_minute": 0.05,
+      "max_seconds": 47,
+      "verified": false,
+      "notes": "Stability AI. Clean stereo, good for ambient, cinematic, sound beds. Short pieces only; the tool joins them."
+    },
+    "lyria2": {
+      "endpoint": "fal-ai/lyria2",
+      "page": "https://fal.ai/models/fal-ai/lyria2",
+      "input": {
+        "prompt": "{prompt}",
+        "negative_prompt": "{negative}"
+      },
+      "output": "audio.url",
+      "price_per_minute": 0.20,
+      "max_seconds": 30,
+      "verified": false,
+      "notes": "Google's music model. Best sound quality for orchestral, jazz and acoustic. 30-second pieces, 48 kHz."
+    },
+    "minimax-music": {
+      "endpoint": "fal-ai/minimax-music",
+      "page": "https://fal.ai/models/fal-ai/minimax-music",
+      "input": {
+        "prompt": "{prompt}",
+        "lyrics": "{lyrics}"
+      },
+      "output": "audio.url",
+      "price_per_minute": 0.10,
+      "max_seconds": 90,
+      "verified": false,
+      "notes": "Makes songs with a singing voice when you give lyrics. Good for Indian film-style songs. Write your own lyrics; never paste a real song's words."
+    },
+    "elevenlabs-music": {
+      "endpoint": "fal-ai/elevenlabs/music",
+      "page": "https://fal.ai/models/fal-ai/elevenlabs/music",
+      "input": {
+        "prompt": "{prompt}",
+        "music_length_ms": "{milliseconds}",
+        "force_instrumental": true
+      },
+      "output": "audio.url",
+      "price_per_minute": 0.40,
+      "max_seconds": 300,
+      "verified": false,
+      "notes": "ElevenLabs Music. Full tracks up to 5 minutes with proper structure. Dearest; use when one track must be perfect."
+    }
+  }
+}

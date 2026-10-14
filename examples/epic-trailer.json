@@ -1,0 +1,10 @@
+{
+  "title": "Rise",
+  "target_seconds": 180,
+  "defaults": {"model": "lyria2", "variants": 2},
+  "tracks": [
+    {"id": "intro", "style": "orchestral-epic", "mood": "quiet piano opening, distant drums", "seconds": 60},
+    {"id": "build", "style": "orchestral-epic", "mood": "rising strings and choir, growing power", "seconds": 60},
+    {"id": "peak", "style": "orchestral-epic", "mood": "full brass and taiko, triumphant finish", "seconds": 60}
+  ]
+}

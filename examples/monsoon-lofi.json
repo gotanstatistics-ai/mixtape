@@ -1,0 +1,15 @@
+{
+  "title": "Monsoon Evening Lo-fi",
+  "subtitle": "music made for this channel",
+  "target_seconds": 300,
+  "backend": "api",
+  "artwork": "cover*.jpg",
+  "defaults": {"model": "ace-step", "variants": 2, "crossfade": 4, "lufs": -14},
+  "tracks": [
+    {"id": "rain-start", "style": "lofi", "mood": "rain on a Bangalore window, first cup of coffee", "seconds": 120,
+     "reference": "in the spirit of a slow lo-fi radio stream (style only)"},
+    {"id": "flute-middle", "style": "bollywood-90s-romantic", "instruments": "bansuri flute lead over soft lo-fi drums",
+     "mood": "dreamy, a little sad", "seconds": 120},
+    {"id": "night-end", "style": "chillhop", "mood": "late night, city lights, gentle close", "seconds": 90}
+  ]
+}

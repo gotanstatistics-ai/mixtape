@@ -1,0 +1,688 @@
+{
+ "_about": [
+  "Style library: the words that make a music model produce that sound.",
+  "Each style has a prompt, a typical tempo (bpm) and 'like' = real-world examples for your reference only; they are never sent to the model.",
+  "Add your own styles freely. A track can combine a style with its own mood, instruments and extra words."
+ ],
+ "styles": {
+  "carnatic": {
+   "group": "Indian classical and folk",
+   "name": "Carnatic instrumental",
+   "prompt": "South Indian Carnatic classical, veena and violin lead, mridangam and ghatam percussion, tanpura drone, raga-based melody with gamaka ornaments, concert hall, acoustic, devotional calm",
+   "bpm": 80,
+   "like": "Veena concerts, M.S. Subbulakshmi era instrumentals"
+  },
+  "hindustani": {
+   "group": "Indian classical and folk",
+   "name": "Hindustani instrumental",
+   "prompt": "North Indian Hindustani classical, sitar and bansuri flute, tabla, tanpura drone, slow alap opening building to a rhythmic gat, meditative, acoustic",
+   "bpm": 70,
+   "like": "Ravi Shankar, Hariprasad Chaurasia"
+  },
+  "bhajan": {
+   "group": "Indian classical and folk",
+   "name": "Bhajan devotional",
+   "prompt": "Indian devotional bhajan, harmonium, tabla, hand cymbals, gentle flute, warm and peaceful, temple atmosphere, slow and repetitive",
+   "bpm": 72,
+   "like": "Morning temple music"
+  },
+  "bhangra": {
+   "group": "Indian classical and folk",
+   "name": "Bhangra",
+   "prompt": "Punjabi bhangra, dhol drums, tumbi, energetic shouts, brass stabs, festive wedding dance, loud and joyful",
+   "bpm": 128,
+   "like": "Punjabi wedding dance floor"
+  },
+  "rajasthani-folk": {
+   "group": "Indian classical and folk",
+   "name": "Rajasthani folk",
+   "prompt": "Rajasthani desert folk, kamaicha and sarangi, khartal wooden clappers, dholak, open desert evening, rustic, haunting melody",
+   "bpm": 96,
+   "like": "Manganiyar musicians"
+  },
+  "kannada-folk": {
+   "group": "Indian classical and folk",
+   "name": "Kannada janapada folk",
+   "prompt": "Karnataka janapada folk, dollu kunitha drums, nadaswaram, flute, village festival procession, rhythmic and earthy",
+   "bpm": 110,
+   "like": "Village jatre music"
+  },
+  "tamil-folk": {
+   "group": "Indian classical and folk",
+   "name": "Tamil folk gaana",
+   "prompt": "Tamil gaana folk beat, thappu drums, urumi, catchy street rhythm, Chennai streets, raw and energetic",
+   "bpm": 120,
+   "like": "Chennai street gaana"
+  },
+  "kerala-chenda": {
+   "group": "Indian classical and folk",
+   "name": "Kerala chenda melam",
+   "prompt": "Kerala temple percussion, massed chenda drums, ilathalam cymbals, kombu horns, building tempo, thunderous festival",
+   "bpm": 100,
+   "like": "Thrissur Pooram"
+  },
+  "baul": {
+   "group": "Indian classical and folk",
+   "name": "Bengali baul",
+   "prompt": "Bengali baul folk, ektara, dotara, khamak, duggi drum, wandering minstrel, soulful and simple",
+   "bpm": 92,
+   "like": "Baul singers of Bengal"
+  },
+  "sufi": {
+   "group": "Indian classical and folk",
+   "name": "Sufi qawwali",
+   "prompt": "Qawwali, harmonium, tabla and dholak, hand claps, rising repeated phrases, ecstatic and spiritual, instrumental",
+   "bpm": 104,
+   "like": "Nusrat Fateh Ali Khan style, no voice"
+  },
+  "bollywood-50s": {
+   "group": "Indian film music",
+   "name": "Bollywood 1950s",
+   "prompt": "1950s Hindi film music, lush string orchestra, accordion, mandolin, soft tabla, black-and-white film romance, nostalgic mono warmth",
+   "bpm": 90,
+   "like": "Shankar-Jaikishan, Naushad"
+  },
+  "bollywood-70s-disco": {
+   "group": "Indian film music",
+   "name": "Bollywood 1970s disco",
+   "prompt": "1970s Bollywood disco funk, wah guitar, brass section, congas, bongos, groovy bass, electric organ, retro cabaret",
+   "bpm": 118,
+   "like": "R.D. Burman, Bappi Lahiri"
+  },
+  "bollywood-90s-romantic": {
+   "group": "Indian film music",
+   "name": "Bollywood 1990s romantic",
+   "prompt": "1990s Hindi film romantic melody, bansuri flute lead, strings, dholak, santoor, sweet and dreamy, Switzerland hills feeling",
+   "bpm": 84,
+   "like": "Nadeem-Shravan, Jatin-Lalit"
+  },
+  "bollywood-2000s": {
+   "group": "Indian film music",
+   "name": "Bollywood 2000s pop",
+   "prompt": "2000s Bollywood pop, blend of dholak and electronic beats, sitar riffs, big chorus feel, youthful and glossy",
+   "bpm": 108,
+   "like": "A.R. Rahman pop side, Pritam"
+  },
+  "bollywood-modern": {
+   "group": "Indian film music",
+   "name": "Bollywood modern dance",
+   "prompt": "modern Bollywood dance track, punchy 808 bass, dhol loops, synth hooks, EDM drops, club ready, festive",
+   "bpm": 124,
+   "like": "Current wedding dance hits"
+  },
+  "ilaiyaraaja": {
+   "group": "Indian film music",
+   "name": "Tamil 1980s film melody",
+   "prompt": "1980s Tamil film score, western strings with Indian flute and veena, bass guitar counter-melody, village morning freshness, elegant and melodic",
+   "bpm": 88,
+   "like": "Ilaiyaraaja"
+  },
+  "rahman-90s": {
+   "group": "Indian film music",
+   "name": "Tamil 1990s world fusion",
+   "prompt": "1990s Tamil film fusion, layered synth pads, Carnatic vocals as texture, electronic percussion with tabla, cinematic and fresh",
+   "bpm": 100,
+   "like": "A.R. Rahman 1990s"
+  },
+  "kannada-film-80s": {
+   "group": "Indian film music",
+   "name": "Kannada 1980s film",
+   "prompt": "1980s Kannada film song, soft strings, flute, tabla and dholak, gentle melody, sentimental family drama",
+   "bpm": 86,
+   "like": "Hamsalekha, Vijaya Bhaskar"
+  },
+  "kannada-film-modern": {
+   "group": "Indian film music",
+   "name": "Kannada modern film",
+   "prompt": "modern Kannada film music, folk drums with cinematic synths, big percussion, heroic and emotional",
+   "bpm": 112,
+   "like": "Sandalwood mass hits"
+  },
+  "telugu-mass": {
+   "group": "Indian film music",
+   "name": "Telugu mass beat",
+   "prompt": "Telugu mass film beat, heavy dappu drums, brass, shouting chorus feel, hero entry energy",
+   "bpm": 130,
+   "like": "Tollywood hero intro"
+  },
+  "south-bgm-epic": {
+   "group": "Indian film music",
+   "name": "South Indian epic score",
+   "prompt": "South Indian epic film score, massed strings, Indian percussion, choir pads, slow heroic build to a thunderous climax",
+   "bpm": 76,
+   "like": "Baahubali style"
+  },
+  "ghazal": {
+   "group": "Indian film music",
+   "name": "Ghazal",
+   "prompt": "ghazal, soft harmonium, tabla, sarangi, intimate late-night mood, slow and tender, instrumental",
+   "bpm": 66,
+   "like": "Jagjit Singh, instrumental"
+  },
+  "indipop-90s": {
+   "group": "Indian film music",
+   "name": "Indipop 1990s",
+   "prompt": "1990s Indian pop, catchy synth bass, tabla loops, acoustic guitar, bright and youthful MTV India feel",
+   "bpm": 104,
+   "like": "Alisha Chinai, Lucky Ali era"
+  },
+  "pop-modern": {
+   "group": "Western pop and rock",
+   "name": "Modern pop",
+   "prompt": "modern pop, clean synths, tight drums, bright chorus feel, radio polish, catchy hook",
+   "bpm": 116,
+   "like": "Current chart pop"
+  },
+  "pop-80s": {
+   "group": "Western pop and rock",
+   "name": "1980s synth pop",
+   "prompt": "1980s synth pop, gated reverb drums, DX7 electric piano, big synth chords, neon night drive",
+   "bpm": 112,
+   "like": "A-ha, Pet Shop Boys"
+  },
+  "synthwave": {
+   "group": "Western pop and rock",
+   "name": "Synthwave retrowave",
+   "prompt": "synthwave, pulsing arpeggios, analog synth leads, 1980s drum machine, neon highway, nostalgic and cinematic",
+   "bpm": 100,
+   "like": "Kavinsky, The Midnight"
+  },
+  "rock-classic": {
+   "group": "Western pop and rock",
+   "name": "Classic rock",
+   "prompt": "classic rock, overdriven electric guitars, driving drums, Hammond organ, stadium energy, 1970s",
+   "bpm": 120,
+   "like": "Led Zeppelin, Deep Purple"
+  },
+  "rock-indie": {
+   "group": "Western pop and rock",
+   "name": "Indie rock",
+   "prompt": "indie rock, jangly guitars, melodic bass, light drums, bittersweet and youthful",
+   "bpm": 128,
+   "like": "The Strokes, Arctic Monkeys"
+  },
+  "metal": {
+   "group": "Western pop and rock",
+   "name": "Heavy metal",
+   "prompt": "heavy metal, palm-muted riffs, double-kick drums, aggressive and powerful, instrumental",
+   "bpm": 150,
+   "like": "Iron Maiden, Metallica"
+  },
+  "punk": {
+   "group": "Western pop and rock",
+   "name": "Punk rock",
+   "prompt": "punk rock, fast power chords, shouted energy, raw garage sound, short and loud",
+   "bpm": 170,
+   "like": "Ramones, Green Day"
+  },
+  "folk-acoustic": {
+   "group": "Western pop and rock",
+   "name": "Acoustic folk",
+   "prompt": "acoustic folk, fingerpicked guitar, soft strings, warm and intimate, campfire",
+   "bpm": 92,
+   "like": "Simon and Garfunkel, Bon Iver"
+  },
+  "country": {
+   "group": "Western pop and rock",
+   "name": "Country",
+   "prompt": "country, acoustic and slide guitar, fiddle, brushed drums, open road, warm and simple",
+   "bpm": 100,
+   "like": "Johnny Cash, modern Nashville"
+  },
+  "reggae": {
+   "group": "Western pop and rock",
+   "name": "Reggae",
+   "prompt": "reggae, offbeat guitar skank, deep bass, one-drop drums, relaxed island sun",
+   "bpm": 76,
+   "like": "Bob Marley"
+  },
+  "blues": {
+   "group": "Western pop and rock",
+   "name": "Blues",
+   "prompt": "slow blues, electric guitar bends, shuffle drums, upright bass, smoky bar",
+   "bpm": 70,
+   "like": "B.B. King"
+  },
+  "lofi": {
+   "group": "Electronic and beats",
+   "name": "Lo-fi hip hop",
+   "prompt": "lo-fi hip hop, dusty drums, warm Rhodes chords, vinyl crackle, mellow and relaxing, study beats",
+   "bpm": 80,
+   "like": "Lofi girl stream"
+  },
+  "chillhop": {
+   "group": "Electronic and beats",
+   "name": "Chillhop",
+   "prompt": "chillhop, jazzy chords, soft boom-bap drums, muted trumpet, laid back evening",
+   "bpm": 88,
+   "like": "Nujabes"
+  },
+  "edm-festival": {
+   "group": "Electronic and beats",
+   "name": "EDM festival",
+   "prompt": "EDM festival anthem, big room synths, build-up and drop, four-on-the-floor kick, euphoric",
+   "bpm": 128,
+   "like": "Martin Garrix, Avicii"
+  },
+  "house-deep": {
+   "group": "Electronic and beats",
+   "name": "Deep house",
+   "prompt": "deep house, warm sub bass, soft chords, shuffling hi-hats, late night lounge",
+   "bpm": 122,
+   "like": "Disclosure"
+  },
+  "techno": {
+   "group": "Electronic and beats",
+   "name": "Techno",
+   "prompt": "techno, driving kick, dark synth stabs, hypnotic repetition, warehouse",
+   "bpm": 132,
+   "like": "Berlin techno"
+  },
+  "trance": {
+   "group": "Electronic and beats",
+   "name": "Trance",
+   "prompt": "uplifting trance, soaring supersaw leads, long builds, euphoric breakdown",
+   "bpm": 138,
+   "like": "Armin van Buuren"
+  },
+  "dubstep": {
+   "group": "Electronic and beats",
+   "name": "Dubstep",
+   "prompt": "dubstep, wobbling bass, half-time drums, heavy drop, aggressive",
+   "bpm": 140,
+   "like": "Skrillex"
+  },
+  "drum-and-bass": {
+   "group": "Electronic and beats",
+   "name": "Drum and bass",
+   "prompt": "drum and bass, fast breakbeats, rolling bass, energetic and sharp",
+   "bpm": 174,
+   "like": "Pendulum"
+  },
+  "trap": {
+   "group": "Electronic and beats",
+   "name": "Trap beat",
+   "prompt": "trap beat, 808 bass slides, rapid hi-hats, dark piano, instrumental",
+   "bpm": 140,
+   "like": "Modern trap instrumentals"
+  },
+  "boom-bap": {
+   "group": "Electronic and beats",
+   "name": "Boom bap hip hop",
+   "prompt": "1990s boom bap hip hop, sampled soul chords, hard kicks and snares, vinyl scratch, instrumental",
+   "bpm": 92,
+   "like": "DJ Premier"
+  },
+  "phonk": {
+   "group": "Electronic and beats",
+   "name": "Phonk",
+   "prompt": "phonk, cowbell melody, distorted 808, Memphis drums, drift video energy",
+   "bpm": 140,
+   "like": "Drift phonk"
+  },
+  "ambient": {
+   "group": "Electronic and beats",
+   "name": "Ambient",
+   "prompt": "ambient, slow evolving pads, no drums, gentle reverb, deep calm, space",
+   "bpm": 60,
+   "like": "Brian Eno"
+  },
+  "downtempo": {
+   "group": "Electronic and beats",
+   "name": "Downtempo chillout",
+   "prompt": "downtempo chillout, soft breakbeat, warm pads, dreamy, sunset beach",
+   "bpm": 94,
+   "like": "Thievery Corporation, Cafe del Mar"
+  },
+  "synth-ambient-space": {
+   "group": "Electronic and beats",
+   "name": "Space ambient",
+   "prompt": "space ambient, deep drones, slow shimmering synths, vast and lonely, planetarium",
+   "bpm": 55,
+   "like": "Stellardrone"
+  },
+  "jazz-swing": {
+   "group": "Jazz, soul and funk",
+   "name": "Swing jazz",
+   "prompt": "swing jazz, walking upright bass, brushed drums, piano trio, muted trumpet, 1940s club",
+   "bpm": 130,
+   "like": "Count Basie"
+  },
+  "jazz-smooth": {
+   "group": "Jazz, soul and funk",
+   "name": "Smooth jazz",
+   "prompt": "smooth jazz, saxophone lead, electric piano, soft groove, late evening",
+   "bpm": 90,
+   "like": "Kenny G, Sade instrumentals"
+  },
+  "jazz-cool": {
+   "group": "Jazz, soul and funk",
+   "name": "Cool jazz",
+   "prompt": "cool jazz, trumpet and piano, relaxed modal lines, 1950s New York night",
+   "bpm": 104,
+   "like": "Miles Davis Kind of Blue"
+  },
+  "bossa-nova": {
+   "group": "Jazz, soul and funk",
+   "name": "Bossa nova",
+   "prompt": "bossa nova, nylon guitar, soft brushes, flute, Rio sunset, gentle",
+   "bpm": 120,
+   "like": "Jobim, Getz"
+  },
+  "soul-60s": {
+   "group": "Jazz, soul and funk",
+   "name": "1960s soul",
+   "prompt": "1960s soul, horn section, Hammond organ, tambourine, warm groove, Motown",
+   "bpm": 110,
+   "like": "Motown instrumentals"
+  },
+  "funk-70s": {
+   "group": "Jazz, soul and funk",
+   "name": "1970s funk",
+   "prompt": "1970s funk, slap bass, wah guitar, tight horns, clavinet, dance floor",
+   "bpm": 108,
+   "like": "James Brown, Earth Wind and Fire"
+  },
+  "rnb-modern": {
+   "group": "Jazz, soul and funk",
+   "name": "Modern R&B",
+   "prompt": "modern R&B, smooth synth pads, slow trap-influenced drums, sensual and mellow, instrumental",
+   "bpm": 72,
+   "like": "The Weeknd instrumentals"
+  },
+  "gospel": {
+   "group": "Jazz, soul and funk",
+   "name": "Gospel",
+   "prompt": "gospel, church organ, piano, hand claps, choir pads, uplifting",
+   "bpm": 96,
+   "like": "Sunday choir"
+  },
+  "orchestral-epic": {
+   "group": "Orchestral and cinematic",
+   "name": "Epic trailer",
+   "prompt": "epic cinematic trailer, massive orchestra, taiko drums, brass hits, choir, rising tension to a huge climax",
+   "bpm": 90,
+   "like": "Hans Zimmer, Two Steps From Hell"
+  },
+  "orchestral-romantic": {
+   "group": "Orchestral and cinematic",
+   "name": "Romantic orchestral",
+   "prompt": "romantic orchestral, sweeping strings, solo piano and oboe, tender and warm, film love theme",
+   "bpm": 70,
+   "like": "John Williams themes"
+  },
+  "orchestral-adventure": {
+   "group": "Orchestral and cinematic",
+   "name": "Adventure score",
+   "prompt": "adventure film score, heroic brass fanfare, galloping strings, bright and bold",
+   "bpm": 120,
+   "like": "Indiana Jones style"
+  },
+  "piano-solo": {
+   "group": "Orchestral and cinematic",
+   "name": "Solo piano",
+   "prompt": "solo piano, gentle and reflective, soft pedal, intimate room, minimal",
+   "bpm": 68,
+   "like": "Ludovico Einaudi, Yiruma"
+  },
+  "strings-minimal": {
+   "group": "Orchestral and cinematic",
+   "name": "Minimal strings",
+   "prompt": "minimal string quartet, slow repeating phrases, melancholic and elegant",
+   "bpm": 64,
+   "like": "Max Richter"
+  },
+  "baroque": {
+   "group": "Orchestral and cinematic",
+   "name": "Baroque",
+   "prompt": "baroque chamber music, harpsichord, violins, cello continuo, ornate and precise",
+   "bpm": 100,
+   "like": "Bach, Vivaldi"
+  },
+  "classical-symphony": {
+   "group": "Orchestral and cinematic",
+   "name": "Classical symphony",
+   "prompt": "classical symphony, full orchestra, clear melodies, elegant and balanced",
+   "bpm": 110,
+   "like": "Mozart, Beethoven"
+  },
+  "documentary-underscore": {
+   "group": "Orchestral and cinematic",
+   "name": "Documentary underscore",
+   "prompt": "documentary underscore, soft piano and strings, subtle pulse, curious and thoughtful, stays under narration",
+   "bpm": 85,
+   "like": "BBC nature documentary beds"
+  },
+  "tension-thriller": {
+   "group": "Orchestral and cinematic",
+   "name": "Thriller tension",
+   "prompt": "thriller tension, low string drones, ticking percussion, suspense, dark and slow",
+   "bpm": 80,
+   "like": "Crime documentary score"
+  },
+  "horror": {
+   "group": "Orchestral and cinematic",
+   "name": "Horror atmosphere",
+   "prompt": "horror atmosphere, dissonant strings, deep rumbles, unsettling silence and stingers",
+   "bpm": 60,
+   "like": "Horror film score"
+  },
+  "video-game-chiptune": {
+   "group": "Orchestral and cinematic",
+   "name": "Chiptune 8-bit",
+   "prompt": "8-bit chiptune, square wave melody, arpeggios, retro game, playful and fast",
+   "bpm": 150,
+   "like": "NES game music"
+  },
+  "afrobeats": {
+   "group": "World",
+   "name": "Afrobeats",
+   "prompt": "Afrobeats, log drum bass, shaker grooves, sunny guitars, Lagos party, warm",
+   "bpm": 104,
+   "like": "Burna Boy, Wizkid instrumentals"
+  },
+  "amapiano": {
+   "group": "World",
+   "name": "Amapiano",
+   "prompt": "amapiano, log drums, airy piano chords, slow building groove, South African house",
+   "bpm": 112,
+   "like": "Amapiano mixes"
+  },
+  "latin-reggaeton": {
+   "group": "World",
+   "name": "Reggaeton",
+   "prompt": "reggaeton, dembow rhythm, Latin synth hooks, club energy",
+   "bpm": 95,
+   "like": "Bad Bunny instrumentals"
+  },
+  "salsa": {
+   "group": "World",
+   "name": "Salsa",
+   "prompt": "salsa, piano montuno, brass, congas and timbales, dance hall, hot",
+   "bpm": 180,
+   "like": "Celia Cruz era"
+  },
+  "flamenco": {
+   "group": "World",
+   "name": "Flamenco",
+   "prompt": "flamenco, nylon guitar rasgueado, palmas hand claps, cajon, passionate Andalusian night",
+   "bpm": 120,
+   "like": "Paco de Lucia"
+  },
+  "tango": {
+   "group": "World",
+   "name": "Tango",
+   "prompt": "Argentine tango, bandoneon, violin, piano, dramatic and sharp, Buenos Aires",
+   "bpm": 120,
+   "like": "Astor Piazzolla"
+  },
+  "celtic": {
+   "group": "World",
+   "name": "Celtic folk",
+   "prompt": "Celtic folk, tin whistle, fiddle, bodhran drum, misty green hills, lively",
+   "bpm": 118,
+   "like": "Irish pub session"
+  },
+  "middle-eastern": {
+   "group": "World",
+   "name": "Middle Eastern",
+   "prompt": "Middle Eastern, oud, qanun, darbuka percussion, maqam melody, desert city market",
+   "bpm": 96,
+   "like": "Arabic instrumental"
+  },
+  "turkish": {
+   "group": "World",
+   "name": "Turkish folk",
+   "prompt": "Turkish folk, baglama saz, ney flute, darbuka, Anatolian mood",
+   "bpm": 100,
+   "like": "Anatolian folk"
+  },
+  "persian": {
+   "group": "World",
+   "name": "Persian classical",
+   "prompt": "Persian classical, santur, tar, tombak, poetic and ornate",
+   "bpm": 84,
+   "like": "Iranian traditional"
+  },
+  "chinese-traditional": {
+   "group": "World",
+   "name": "Chinese traditional",
+   "prompt": "Chinese traditional, guzheng, erhu, dizi bamboo flute, pentatonic, misty mountains",
+   "bpm": 72,
+   "like": "Guzheng instrumentals"
+  },
+  "japanese-traditional": {
+   "group": "World",
+   "name": "Japanese traditional",
+   "prompt": "Japanese traditional, koto, shakuhachi, taiko, zen garden, spare and calm",
+   "bpm": 66,
+   "like": "Koto and shakuhachi"
+  },
+  "japanese-city-pop": {
+   "group": "World",
+   "name": "Japanese city pop",
+   "prompt": "1980s Japanese city pop, funky bass, bright synths, sparkling Tokyo night, instrumental",
+   "bpm": 112,
+   "like": "Mariya Takeuchi era"
+  },
+  "kpop": {
+   "group": "World",
+   "name": "K-pop",
+   "prompt": "K-pop, polished synth pop, punchy drums, catchy hooks, bright and energetic, instrumental",
+   "bpm": 120,
+   "like": "Current K-pop"
+  },
+  "african-drums": {
+   "group": "World",
+   "name": "African percussion",
+   "prompt": "West African percussion ensemble, djembe, dundun, polyrhythms, kora melody, village celebration",
+   "bpm": 110,
+   "like": "Djembe ensemble"
+  },
+  "caribbean-soca": {
+   "group": "World",
+   "name": "Soca and calypso",
+   "prompt": "soca calypso, steel pan, brass, carnival rhythm, bright and fast",
+   "bpm": 130,
+   "like": "Trinidad carnival"
+  },
+  "polka": {
+   "group": "World",
+   "name": "Polka",
+   "prompt": "polka, accordion, tuba, clarinet, oompah beat, festival",
+   "bpm": 120,
+   "like": "Oktoberfest"
+  },
+  "gypsy-jazz": {
+   "group": "World",
+   "name": "Gypsy jazz",
+   "prompt": "gypsy jazz, fast acoustic guitar rhythm, violin, 1930s Paris cafe",
+   "bpm": 190,
+   "like": "Django Reinhardt"
+  },
+  "andean": {
+   "group": "World",
+   "name": "Andean folk",
+   "prompt": "Andean folk, pan flute, charango, soft drum, mountain air",
+   "bpm": 96,
+   "like": "Peruvian pan flute"
+  },
+  "hawaiian": {
+   "group": "World",
+   "name": "Hawaiian",
+   "prompt": "Hawaiian, slack-key guitar, ukulele, lap steel, gentle waves",
+   "bpm": 84,
+   "like": "Island ukulele"
+  },
+  "workout": {
+   "group": "Moods and uses",
+   "name": "Workout",
+   "prompt": "workout motivation, powerful beat, driving bass, rising energy, gym",
+   "bpm": 135,
+   "like": "Gym playlist"
+  },
+  "meditation": {
+   "group": "Moods and uses",
+   "name": "Meditation",
+   "prompt": "meditation, singing bowls, soft drone, nature ambience, very slow, breathing space",
+   "bpm": 50,
+   "like": "Yoga studio"
+  },
+  "sleep": {
+   "group": "Moods and uses",
+   "name": "Sleep",
+   "prompt": "sleep music, extremely soft pads, slow piano notes, no rhythm, dark and warm",
+   "bpm": 48,
+   "like": "Sleep playlist"
+  },
+  "kids": {
+   "group": "Moods and uses",
+   "name": "Children's",
+   "prompt": "children's music, xylophone, ukulele, playful whistles, happy and bouncy, simple",
+   "bpm": 120,
+   "like": "Nursery and cartoons"
+  },
+  "christmas": {
+   "group": "Moods and uses",
+   "name": "Christmas",
+   "prompt": "Christmas, sleigh bells, warm strings, glockenspiel, cosy and festive",
+   "bpm": 100,
+   "like": "Holiday playlist"
+  },
+  "wedding": {
+   "group": "Moods and uses",
+   "name": "Wedding entrance",
+   "prompt": "wedding entrance, strings and piano, harp, grand and tender",
+   "bpm": 72,
+   "like": "Bridal walk"
+  },
+  "corporate": {
+   "group": "Moods and uses",
+   "name": "Corporate upbeat",
+   "prompt": "corporate upbeat, clean guitar, claps, bright piano, optimistic, presentation",
+   "bpm": 110,
+   "like": "Explainer video music"
+  },
+  "news-theme": {
+   "group": "Moods and uses",
+   "name": "News theme",
+   "prompt": "news theme, urgent brass, pulsing synths, timpani, authoritative",
+   "bpm": 120,
+   "like": "TV news opening"
+  },
+  "travel-vlog": {
+   "group": "Moods and uses",
+   "name": "Travel vlog",
+   "prompt": "travel vlog, ukulele, whistling, hand claps, sunny and free",
+   "bpm": 108,
+   "like": "YouTube travel vlogs"
+  },
+  "rain-cafe": {
+   "group": "Moods and uses",
+   "name": "Rainy cafe jazz",
+   "prompt": "rainy day cafe jazz, soft piano, brushed drums, rain on the window, cosy",
+   "bpm": 78,
+   "like": "Coffee shop playlist"
+  }
+ }
+}
