@@ -60,7 +60,11 @@ def test_brief_prompt_and_cost(tmp_path):
     assert b.estimate() == round(b.cost(b.tracks[0]) + b.cost(b.tracks[1]), 2)
     assert b.pieces(t) == [8]
     text = b.plan_text()
-    assert "Test Tape" in text and "[a]" in text and "not yet verified" in text and "WARNING" in text  # 16 s < 20 s target
+    assert "Test Tape" in text and "[a]" in text and "WARNING" in text  # 16 s < 20 s target
+    assert "not yet verified" not in text  # ace-step was verified with a real run on 2026-10-15
+    unverified = json.loads(json.dumps(b.models))
+    unverified["models"]["ace-step"]["verified"] = False
+    assert "not yet verified" in Brief(write_brief(tmp_path), models=unverified).plan_text()
 
 
 def test_brief_pieces_for_long_tracks(tmp_path):
