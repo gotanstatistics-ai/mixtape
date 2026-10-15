@@ -18,20 +18,22 @@ Goal: set the test brief back to `"backend": "api"`, `plan`, `run --max-usd 0.50
   Lesson: push the `Music/` briefs and the notes files to the repository before a cloud session,
   or the session starts without them.
 - **fal.ai answered 401 ("Authentication is required to access this application") to every
-  request from this environment**, with and without an `Authorization` header, from the tool and
-  from curl. The environment says it injects the fal.ai key for `*.fal.ai` and `*.fal.run`, but
-  nothing arrived at fal.ai that it accepted. Nothing was spent. To check in the environment's
-  settings (cloud environment menu, Edit, Network secrets): the fal.ai secret is present, is the
-  full key (`KEY_ID:KEY_SECRET` as shown on fal.ai's Keys page) and is sent as
-  `Authorization: Key <key>`. A `FAL_KEY` environment variable with the real key works too, since
-  `mixtape/falapi.py` reads it. Until one of those is fixed, `run` cannot work from the cloud and
-  the inbox method is the only way.
+  request at first**, with and without an `Authorization` header, from the tool and from curl.
+  Cause: the environment's fal.ai network secret was saved with the default header prefix
+  `Bearer`; fal.ai only accepts `Authorization: Key <id:secret>`. Fix (done by Gopi during the
+  session): cloud environment menu, Edit, Network secrets, delete the old fal.ai row, Add secret
+  with name `fal.ai`, allowed websites `*.fal.run` and `*.fal.ai`, no path prefix, and in the
+  custom header row change the prefix from `Bearer` to `Key` before pasting the full key. The
+  "resolved curl example" at the bottom must read `Authorization: Key ***`. The running session
+  picked the new secret up without a restart. Nothing was spent during the failures.
+- **Run the tool with `FAL_KEY=proxy-injected`** (any non-empty word) in this environment: the
+  proxy replaces the header, but `cli.py` refuses to start without some key value.
 - **ace-step's input field is `tags`, not `prompt`.** fal.ai publishes every model's schema at
   `https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai/ace-step` (no key, no cost).
   The required input is `tags`; `prompt` would have been ignored and the request refused. Fixed
   in `mixtape/models.json`. Also learned there: `duration` 5 to 240 s, `number_of_steps` 3 to 60
   (the file already asks for 60, the maximum, so nothing to raise), output `audio.url` as written.
-  `verified` stays `false` until a real run returns a file.
+  ace-step is now `verified: true`.
 - **The other models, checked the same way:** `stable-audio` (prompt, seconds_total 0 to 47, steps),
   `lyria2` (prompt, negative_prompt) and `elevenlabs/music` (prompt, music_length_ms,
   force_instrumental) match the file. `minimax-music` does not: fal.ai's version takes `prompt` as
@@ -43,6 +45,10 @@ Goal: set the test brief back to `"backend": "api"`, `plan`, `run --max-usd 0.50
   code is open.
 
 ### What worked well
+
+- **`run --max-usd 0.50` made both takes in 35 s of wall time** for 0.24 USD, exactly the plan's
+  estimate: `test__take-1.wav` and `test__take-2.wav` in `Music/Test 1/out/takes/`, each 119.9 s,
+  48 kHz stereo 16-bit WAV straight from the model, so no resampling before `mix`.
 
 - `plan` on the recreated brief: 1 track, 120 s, 2 variants, ace-step, estimated 0.24 USD, prompt
   built from the `lofi` style plus the mood words. All 16 tests pass after the models.json change.

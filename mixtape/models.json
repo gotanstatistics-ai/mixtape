@@ -21,8 +21,8 @@
       "output": "audio.url",
       "price_per_minute": 0.06,
       "max_seconds": 240,
-      "verified": false,
-      "notes": "Open-source model, cheap, makes up to 4 minutes in one go. Good for beats, lo-fi, EDM, pop instrumentals. '[inst]' in lyrics means instrumental. fal.ai calls the style words 'tags' (not 'prompt'); number_of_steps 60 is the model's maximum (its default is 27). Fields checked against fal.ai's published schema on 2026-10-15; still waiting for one real run to mark verified."
+      "verified": true,
+      "notes": "Open-source model, cheap, makes up to 4 minutes in one go. Good for beats, lo-fi, EDM, pop instrumentals. '[inst]' in lyrics means instrumental. fal.ai calls the style words 'tags' (not 'prompt'); number_of_steps 60 is the model's maximum (its default is 27). Verified 2026-10-15: two 120 s takes came back from the cloud 'Music' environment, 0.12 USD each (ledger)."
     },
     "stable-audio": {
       "endpoint": "fal-ai/stable-audio",
