@@ -1,0 +1,14 @@
+{
+  "title": "Quiet Miracle",
+  "subtitle": "music made for this channel",
+  "target_seconds": 120,
+  "backend": "api",
+  "defaults": {"model": "ace-step", "variants": 3, "crossfade": 4, "lufs": -14},
+  "tracks": [
+    {"id": "miracle", "style": "orchestral-romantic", "bpm": 60, "seconds": 120, "variants": 3,
+     "instruments": "solo piano carries a simple slow melody, warm sustained strings underneath, soft oboe answering the piano, celesta and music-box bells for sparkle, no drums",
+     "mood": "tender, wondrous, blissful, quiet awe, a little sad but at peace, grace, late 1990s American film score feel",
+     "extra": "very slow, long held notes, space between phrases, piano alone for the first 15 seconds, strings enter, one gentle swell in the middle, thins back to piano alone, gentle fade",
+     "reference": "the feeling of the main theme of The Green Mile (Thomas Newman, 1999): style only, our own tune, nothing copied"}
+  ]
+}

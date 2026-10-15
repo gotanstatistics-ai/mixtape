@@ -12,6 +12,9 @@
   lead, soft tabla and brushed drums, nostalgic 1990s South Indian film feel, intro/build/fade),
   3 variants. Earlier: the 2-minute test brief, `"backend": "api"`, one 120 s lo-fi
   track, 2 variants (recreated in the cloud; replace with the local copy if it differs).
+- `Music/Green Mile Feel/green-mile-feel.json`: brief "Quiet Miracle", one 120 s track in the feel of
+  Thomas Newman's Green Mile theme (style words only: slow piano melody, warm strings, oboe,
+  celesta, 60 bpm, intro/swell/fade), 3 ace-step variants, 0.36 USD.
 - LESSONS.md and CHANGELOG.md started in the repository (the local copies were never pushed).
 - Quality settings untouched: 48 kHz stereo, -14 LUFS, 1920x1080 / 1080x1920, 30 fps, crf 18,
   AAC 192k; ace-step steps stay at the maximum 60.

@@ -56,8 +56,16 @@ Goal: set the test brief back to `"backend": "api"`, `plan`, `run --max-usd 0.50
   (0.06 USD/min, 240 s in one piece) is the only model that fits a 0.50 cap for three 2-minute
   takes; the style words carry the acoustic feel.
 
+- **"Make music like The Green Mile theme, decode its notes":** the rules in README.md say no. The
+  melody is Thomas Newman's and still copyrighted; the session cannot hear YouTube anyway. What
+  works instead is naming the sound: the instruments (piano, sustained strings, oboe, celesta),
+  tempo (about 60 bpm), mood words and the shape, as the third brief does. The `reference` line
+  records the inspiration for our notes and is never sent to the model.
+
 ### What worked well
 
+- **Third brief (`Quiet Miracle`): `orchestral-romantic` + 60 bpm + instruments + mood + shape**
+  made three 120 s takes for 0.36 USD in about a minute, first try, no field errors.
 - **Second brief (`bansuri`): style `ilaiyaraaja` + bpm 75 + instruments + mood + an `extra` line
   for the shape** gave a usable 2-minute prompt; three takes, 0.36 USD, about 20 s each.
 - **`run --max-usd 0.50` made both takes in 35 s of wall time** for 0.24 USD, exactly the plan's
