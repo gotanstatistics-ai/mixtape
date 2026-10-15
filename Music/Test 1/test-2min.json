@@ -1,0 +1,10 @@
+{
+  "title": "Test 2 min",
+  "subtitle": "mixtape test, made for this channel",
+  "target_seconds": 120,
+  "backend": "api",
+  "defaults": {"model": "ace-step", "variants": 2, "crossfade": 4, "lufs": -14},
+  "tracks": [
+    {"id": "test", "style": "lofi", "mood": "evening rain on a Bangalore window, warm and calm", "seconds": 120}
+  ]
+}

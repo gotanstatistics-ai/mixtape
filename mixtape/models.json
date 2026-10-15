@@ -11,7 +11,7 @@
       "endpoint": "fal-ai/ace-step",
       "page": "https://fal.ai/models/fal-ai/ace-step",
       "input": {
-        "prompt": "{prompt}",
+        "tags": "{prompt}",
         "lyrics": "[inst]",
         "duration": "{seconds}",
         "number_of_steps": 60,
@@ -22,7 +22,7 @@
       "price_per_minute": 0.06,
       "max_seconds": 240,
       "verified": false,
-      "notes": "Open-source model, cheap, makes up to 4 minutes in one go. Good for beats, lo-fi, EDM, pop instrumentals. '[inst]' in lyrics means instrumental."
+      "notes": "Open-source model, cheap, makes up to 4 minutes in one go. Good for beats, lo-fi, EDM, pop instrumentals. '[inst]' in lyrics means instrumental. fal.ai calls the style words 'tags' (not 'prompt'); number_of_steps 60 is the model's maximum (its default is 27). Fields checked against fal.ai's published schema on 2026-10-15; still waiting for one real run to mark verified."
     },
     "stable-audio": {
       "endpoint": "fal-ai/stable-audio",
@@ -62,7 +62,7 @@
       "price_per_minute": 0.10,
       "max_seconds": 90,
       "verified": false,
-      "notes": "Makes songs with a singing voice when you give lyrics. Good for Indian film-style songs. Write your own lyrics; never paste a real song's words."
+      "notes": "Makes songs with a singing voice when you give lyrics. Good for Indian film-style songs. Write your own lyrics; never paste a real song's words. WARNING (schema check 2026-10-15): fal.ai's fal-ai/minimax-music takes 'prompt' = the lyrics and REQUIRES 'reference_audio_url', a real song with vocals to copy the style from. That breaks the rules at the top of README.md, so this model is not usable as written; use ace-step with lyrics instead until a lyrics-only endpoint is found."
     },
     "elevenlabs-music": {
       "endpoint": "fal-ai/elevenlabs/music",
