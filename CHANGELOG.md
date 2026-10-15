@@ -6,7 +6,11 @@
   notes updated with the schema limits. `minimax-music` notes warn that fal.ai's endpoint needs a
   reference song, which the tool's rules do not allow. ace-step marked `verified: true` after two
   real 120 s takes came back (0.24 USD, see the brief's ledger).
-- `Music/Test 1/test-2min.json`: the 2-minute test brief, `"backend": "api"`, one 120 s lo-fi
+- `mixtape/core.py`: `run --max-usd` now caps the spend of the current run; earlier runs of the
+  same brief stay in the ledger but no longer block new takes. README sentence updated.
+- `Music/Test 1/test-2min.json`: second brief, track `bansuri` (style `ilaiyaraaja`, 75 bpm, bansuri
+  lead, soft tabla and brushed drums, nostalgic 1990s South Indian film feel, intro/build/fade),
+  3 variants. Earlier: the 2-minute test brief, `"backend": "api"`, one 120 s lo-fi
   track, 2 variants (recreated in the cloud; replace with the local copy if it differs).
 - LESSONS.md and CHANGELOG.md started in the repository (the local copies were never pushed).
 - Quality settings untouched: 48 kHz stereo, -14 LUFS, 1920x1080 / 1080x1920, 30 fps, crf 18,

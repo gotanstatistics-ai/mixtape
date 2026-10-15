@@ -3,8 +3,12 @@
   "subtitle": "mixtape test, made for this channel",
   "target_seconds": 120,
   "backend": "api",
-  "defaults": {"model": "ace-step", "variants": 2, "crossfade": 4, "lufs": -14},
+  "defaults": {"model": "ace-step", "variants": 3, "crossfade": 4, "lufs": -14},
   "tracks": [
-    {"id": "test", "style": "lofi", "mood": "evening rain on a Bangalore window, warm and calm", "seconds": 120}
+    {"id": "bansuri", "style": "ilaiyaraaja", "bpm": 75, "seconds": 120, "variants": 3,
+     "instruments": "bansuri flute lead, soft tabla and brushed drums",
+     "mood": "nostalgic, warm, happiness, 1990s South Indian film feel",
+     "extra": "slow tempo, quiet 15-second intro, builds in the middle, gentle fade at the end",
+     "reference": "take 1/2 of the first lo-fi test were close but not there; this is the second brief (style only)"}
   ]
 }

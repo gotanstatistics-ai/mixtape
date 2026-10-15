@@ -44,8 +44,22 @@ Goal: set the test brief back to `"backend": "api"`, `plan`, `run --max-usd 0.50
   catches `BriefError` but not `falapi.FalError`. Harmless, but worth a two-line fix next time the
   code is open.
 
+- **Second brief, same day: `--max-usd` counted the whole ledger, not the run.** The first test had
+  spent 0.24 USD, so the new three-take run (0.36 USD) stopped after two takes at 0.48. Fixed in
+  `core.generate`: the cap now limits what this run spends; the ledger still keeps the brief's
+  total (README updated). Re-running made the third take.
+- **Reusing a track id keeps the old takes.** `run` only makes missing files, so a new prompt under
+  the old id would have made just the missing variant with the new words. Give a changed track a
+  new id (`test` became `bansuri`); the old takes stay in `out/takes/` but are not in the brief.
+- **Model choice when the brief turns acoustic.** lyria2 at 0.20 USD/min makes 3 x 120 s cost
+  1.20 USD and only 30-second pieces, so it cannot follow "quiet intro, builds, fades". ace-step
+  (0.06 USD/min, 240 s in one piece) is the only model that fits a 0.50 cap for three 2-minute
+  takes; the style words carry the acoustic feel.
+
 ### What worked well
 
+- **Second brief (`bansuri`): style `ilaiyaraaja` + bpm 75 + instruments + mood + an `extra` line
+  for the shape** gave a usable 2-minute prompt; three takes, 0.36 USD, about 20 s each.
 - **`run --max-usd 0.50` made both takes in 35 s of wall time** for 0.24 USD, exactly the plan's
   estimate: `test__take-1.wav` and `test__take-2.wav` in `Music/Test 1/out/takes/`, each 119.9 s,
   48 kHz stereo 16-bit WAV straight from the model, so no resampling before `mix`.

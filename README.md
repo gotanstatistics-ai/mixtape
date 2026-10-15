@@ -14,7 +14,8 @@ Nothing is copied from anyone. The music is generated from words, so there is no
 - Never paste a real song's lyrics or melody, and never ask for a real singer's voice. The tool only
   sends the style words. A copy of a tune is still a copyright problem, even when a machine made it.
 - Generation costs money (about 5 to 40 US cents per minute of music depending on the model).
-  `plan` shows the estimate before anything is made and `run --max-usd` caps the spend.
+  `plan` shows the estimate before anything is made and `run --max-usd` caps the spend of that run
+  (what earlier runs spent stays in the ledger but does not count against the cap).
   `out/ledger.json` records every cent.
 - Quality settings are fixed and never lowered: 48 kHz stereo, -14 LUFS (YouTube's level),
   video 1920x1080 or 1080x1920, 30 fps, libx264 crf 18, AAC 192k.

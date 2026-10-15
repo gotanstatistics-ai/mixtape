@@ -170,9 +170,11 @@ def takes_of(brief, t):
 
 
 def generate(brief, client, log, max_usd=None, only=None):
-    """Make every missing take. Stops before any take that would push spending over max_usd."""
+    """Make every missing take. Stops before any take that would push this run's spending over
+    max_usd (earlier runs of the same brief stay in the ledger but do not count against the cap)."""
     ledger = Ledger(brief.out / "ledger.json")
     made = 0
+    spent_now = 0.0
     for t in brief.tracks:
         if only and t["id"] not in only:
             continue
@@ -183,8 +185,8 @@ def generate(brief, client, log, max_usd=None, only=None):
                 if dest.exists():
                     continue
                 usd = round(m["price_per_minute"] * secs / 60, 3)
-                if max_usd is not None and ledger.spent() + usd > max_usd:
-                    log(f"cap: {ledger.spent():.2f} spent, next take {usd:.2f} would pass {max_usd:.2f} USD; stopping")
+                if max_usd is not None and spent_now + usd > max_usd:
+                    log(f"cap: {spent_now:.2f} spent in this run, next take {usd:.2f} would pass {max_usd:.2f} USD; stopping")
                     return made
                 log(f"{dest.name}: {t['model']}, {secs} s, about {usd:.2f} USD")
                 dest.parent.mkdir(parents=True, exist_ok=True)
@@ -192,8 +194,9 @@ def generate(brief, client, log, max_usd=None, only=None):
                 client.generate(m, brief.values(t, secs), tmp)
                 os.replace(tmp, dest)
                 ledger.add(t["id"], t["model"], secs, usd, dest)
+                spent_now += usd
                 made += 1
-    log(f"{made} takes made; total spent {ledger.spent():.2f} USD")
+    log(f"{made} takes made for {spent_now:.2f} USD in this run; the brief's ledger totals {ledger.spent():.2f} USD")
     return made
 
 
